@@ -116,6 +116,13 @@ p {
     text-transform: uppercase;
     letter-spacing: 1px;
     margin-top: 0;
+
+}
+
+.logo-img {
+    width: 70px;
+    margin-top: 0;
+    vertical-align: middle;
 }
 
 .navbar-toggle {
