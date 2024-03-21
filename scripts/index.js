@@ -1,7 +1,3 @@
-/**
- * index.js
- * - All our useful JS goes here, awesome!
- */
 let menu = document.getElementById("js-menu");
 let navbarToggle = document.getElementById("js-navbar-toggle");
 navbarToggle.addEventListener("click",function(){
@@ -18,6 +14,41 @@ window.addEventListener('scroll',function(){
         navbar.classList.remove('navbar-strick');
     }
 })
+
+/************************************************** */
+
+let newsletterForm = document.querySelector(".newsletter-form");
+newsletterForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+})
+
+const emailInput = document.getElementById("emailInput");
+const subscribeBtn = document.getElementById("subscribeBtn");
+
+function toggleButtonColor() {
+    if (emailInput.value.trim() !== "") {
+        subscribeBtn.classList.add("filled");
+    } else {
+        subscribeBtn.classList.remove("filled");
+    }
+}
+
+subscribeBtn.addEventListener("click", function(event) {
+    if (emailInput.value.trim() === "") {
+        event.preventDefault();
+    } else {
+        subscribeBtn.classList.add("filled");
+    }
+});
+
+emailInput.addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        event.preventDefault();
+        if (emailInput.value.trim() !== "") {
+            subscribeBtn.click();
+        }
+    }
+});
 /************************************************** */
 
 let btnTop = document.getElementById("js-btn-top");
