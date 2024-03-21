@@ -55,7 +55,7 @@ p {
     height: 10px;
     width: 200px;
     background-color: var(--main-color);
-    margin: auto auto 50px;
+    margin: 0 auto 50px;
 }
 
 /*------------------------------------*\
@@ -128,7 +128,6 @@ p {
 .navbar-toggle {
     display: none;
     position: absolute;
-    color: #fff;
     font-size: 20px;
     top: 30px;
     right: 20px;
@@ -136,9 +135,19 @@ p {
 }
 
 .navbar-strick {
-    background-color: #222;
+    background-color: #fff;
     height: 70px;
     box-shadow: 0 0 5px #222;
+
+    .menu-link,
+    .logo {
+        color: #111;
+    }
+
+    .menu-link:hover,
+    .menu-item.active {
+        color: var(--main-color);
+    }
 }
 
 @media screen and (max-width: 768px) {
@@ -163,14 +172,21 @@ p {
     }
     .logo,
     .menu-link {
-        margin-top: 20px;
-        margin-left: 20px;
+        margin-top: 3px;
+        margin-left: 0;
     }
     .navbar-toggle {
         display: block;
+        margin-top: -6px;
+        color: #fff;
     }
     .active {
         display: block;
+    }
+    .navbar-strick {
+        .navbar-toggle {
+            color: #111;
+        }
     }
 }
 
@@ -499,7 +515,7 @@ p {
 }
 
 /*------------------------------------*\
-  #NEWSELATTER
+  #NEWSLETTER
 \*------------------------------------*/
 .bg-newsletter {
     padding: 50px;
@@ -549,6 +565,10 @@ p {
     border: 1px solid #ddd;
 }
 
+.newsletter-btn.filled {
+    background-color: green;
+}
+
 /*------------------------------------*\
   #CONTACT
 \*------------------------------------*/
@@ -579,7 +599,7 @@ p {
 }
 
 .contact-input:focus {
-    box-shadow: 0 0 10px 4px var(--main-color);
+    box-shadow: 0 0 5px 4px var(--main-color);
 }
 
 .contact-textarea {
